@@ -5,38 +5,42 @@ class ColorPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      colorName: '',
+      colorPicker: '',
     };  
   }
-  getColor(event) {
+  getColor() {
     this.setState({
-      colorName: event.target.getAttribute("data-style-color"),   
+      colorPicker: this.props['data-color'],   
     });
     
   }
   reset() {
     this.setState({
-      colorName: '',
+      colorPicker: '',
     });
 }
 render() {
   return (
   <div>
-  <div className="picker__title" onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}></div>
+  <div className="picker__title"></div>
   <div>
     <button 
     className="picker__button picker__button_coral"
-    data-style-color= 'coral'
+    data-color= "Coral"
+    onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}
     >
+    {this.state.colorPicker}
     </button>
     <button 
     className="picker__button picker__button_aqua"
-    data-style-color= 'aqua'
+    data-color= "Aqua"
+    onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}
     
     >
     </button>
     <button className="picker__button picker__button_bisque"
-    data-style-color= 'bisque'
+    data-color= "Bisque"
+    onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}
     >
     </button>
   </div>
