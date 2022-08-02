@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-const CORAL = '#FF7F50';
-const AQUA = '#00FFFF';
-const BISQUE = '#FFE4C4';
+
 
 class ColorPicker extends Component {
   constructor(props) {
@@ -12,7 +10,7 @@ class ColorPicker extends Component {
   }
   getColor(event) {
     this.setState({
-      colorName: event.target.getAttribute("data-style-color"),   
+      colorName: event.getAttribute("data-style-color"),   
     });
     
   }
@@ -28,17 +26,17 @@ render() {
   <div>
     <button 
     className="picker__button picker__button_coral"
-    data-style-color={CORAL}
+    data-style-color= 'coral'
     >
     </button>
     <button 
     className="picker__button picker__button_aqua"
-    data-style-color={AQUA}
+    data-style-color= 'aqua'
     
     >
     </button>
     <button className="picker__button picker__button_bisque"
-    data-style-color={BISQUE}
+    data-style-color= 'bisque'
     >
     </button>
   </div>
