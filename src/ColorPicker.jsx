@@ -10,7 +10,7 @@ class ColorPicker extends Component {
   }
   getColor(event) {
     this.setState({
-      colorName: event.getAttribute("data-style-color"),   
+      colorName: event.target.getAttribute("data-style-color"),   
     });
     
   }
