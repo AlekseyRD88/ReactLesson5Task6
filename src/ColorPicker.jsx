@@ -10,9 +10,9 @@ class ColorPicker extends Component {
       colorName: '',
     };  
   }
-  getBackground() {
+  getColor(event) {
     this.setState({
-      colorName: this.style.backgroundColor,   
+      colorName: event.target.getAttribute("data-style-color"),   
     });
     
   }
@@ -24,27 +24,22 @@ class ColorPicker extends Component {
 render() {
   return (
   <div>
-  <div className="picker__title" onMouseLeave={() => this.reset()}></div>
+  <div className="picker__title" onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}></div>
   <div>
     <button 
     className="picker__button picker__button_coral"
-    style={{
-      backgroundColor: CORAL,
-    }}
-    onMouseEnter={() => this.getBackground()}>
+    data-style-color={CORAL}
+    >
     </button>
     <button 
     className="picker__button picker__button_aqua"
-    style={{
-      backgroundColor: AQUA,
-    }}
-    onMouseEnter={() => this.getBackground()}>
+    data-style-color={AQUA}
+    
+    >
     </button>
     <button className="picker__button picker__button_bisque"
-    style={{
-      backgroundColor: BISQUE,
-    }}
-    onMouseEnter={() => this.getBackground()}>
+    data-style-color={BISQUE}
+    >
     </button>
   </div>
   </div>
