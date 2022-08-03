@@ -5,42 +5,35 @@ class ColorPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      colorPicker: '',
+      colorPicker: null,
     };  
   }
-  getColor() {
+  getColor = title => {
     this.setState({
-      colorPicker: this.props['data-color'],   
+      colorPicker: title,   
     });
     
-  }
-  reset() {
-    this.setState({
-      colorPicker: '',
-    });
 }
+  reset = () => this.getColor(null);
 render() {
   return (
   <div>
-  <div className="picker__title"></div>
+  <div className="picker__title">{this.state.colorPicker}</div>
   <div>
     <button 
     className="picker__button picker__button_coral"
-    data-color= "Coral"
-    onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}
+    onMouseEnter={() => this.getColor('Coral')} onMouseLeave={this.reset}
     >
-    {this.state.colorPicker}
+    
     </button>
     <button 
     className="picker__button picker__button_aqua"
-    data-color= "Aqua"
-    onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}
+    onMouseEnter={() => this.getColor('Aqua')} onMouseLeave={this.reset}
     
     >
     </button>
     <button className="picker__button picker__button_bisque"
-    data-color= "Bisque"
-    onMouseEnter={() => this.getColor()} onMouseLeave={() => this.reset()}
+    onMouseEnter={() => this.getColor('Bisque')} onMouseLeave={this.reset}
     >
     </button>
   </div>
