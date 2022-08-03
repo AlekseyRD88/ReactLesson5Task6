@@ -20,22 +20,17 @@ render() {
   <div>
   <div className="picker__title">{this.state.colorPicker}</div>
   <div>
-    <button 
+    <button
     className="picker__button picker__button_coral"
     onMouseEnter={() => this.getColor('Coral')} onMouseLeave={this.reset}
-    >
-    
-    </button>
+    />
     <button 
     className="picker__button picker__button_aqua"
-    onMouseEnter={() => this.getColor('Aqua')} onMouseLeave={this.reset}
-    
-    >
-    </button>
+    onMouseEnter={() => this.getColor('Aqua')} onMouseLeave={this.reset}  
+    />
     <button className="picker__button picker__button_bisque"
     onMouseEnter={() => this.getColor('Bisque')} onMouseLeave={this.reset}
-    >
-    </button>
+    />
   </div>
   </div>
   );
